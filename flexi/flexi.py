@@ -1,12 +1,8 @@
 """
-Core decorators for the flexi models
+Core decorators for flexi models
 """
 
-"""
-Tools for helping make our data models.
-
-So far: making dataclasses read/writable as JSON
-"""
+from dataclasses import dataclass, field
 
 
 def something(val):

@@ -1,19 +1,20 @@
 """
 Tests for core flexiclass decorator
-"""
-
-"""
 NOTE: this really should be more extensively tested!
 """
 
-from dataclasses import dataclass, field
+from __future__ import annotations
 
-from flexi.flexi import (flexiclass, JSON_List)
+from dataclasses import field
+
+from flexi.flexi import (flexiclass,
+                         JSON_List)
 
 import pytest
 
-# A few examples to work with
 
+
+# A few examples to work with
 
 @flexiclass
 class ReallySimple:
@@ -215,8 +216,7 @@ def test_SimpleWithValidated():
 
 def test_pre_from_py_json():
 
-    @dataclass_to_json
-    @dataclass
+    @flexiclass
     class SimpleClass:
         version: str = "0.1.3"
         name: str = ""
